@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>try{document.documentElement.dataset.theme=localStorage.getItem('genelMuhasebeTheme.v1')||'dark'}catch{document.documentElement.dataset.theme='dark'}</script>
 <title>Genel Muhasebe Çalışma Platformu</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -14,6 +14,67 @@
 @media(max-width:1050px){.layout{grid-template-columns:minmax(260px,34fr) minmax(0,66fr)!important}.scroll-panel{top:190px;max-height:calc(100vh - 205px)}}
 @media(max-width:760px){html{scroll-padding-top:20px}.header-sticky{position:static!important}.header-sticky>div{padding:12px}.header-sticky h1{font-size:20px}.header-sticky .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px}.header-sticky .filters .chip{white-space:nowrap}.header-sticky .searchbox{min-width:150px}.layout{grid-template-columns:1fr!important;gap:14px}.scroll-panel{position:static;max-height:none;overflow:visible}.study-steps{grid-template-columns:1fr 1fr}.study-step{min-height:64px;padding:10px;border-bottom:1px solid var(--line)}.study-step:nth-child(2){border-right:0}.study-step:nth-child(3),.study-step:nth-child(4){border-bottom:0}.lesson-body{padding-left:16px}.question-nav{grid-template-columns:auto 1fr auto}.question-nav .nav-counter{grid-column:1/-1;grid-row:1}.question-nav .question-select{grid-column:1/-1;grid-row:2}.question-nav #qPrev{grid-column:1;grid-row:3}.question-nav #qNext{grid-column:3;grid-row:3}.entry-row{grid-template-columns:1fr 1fr}.entry-row .account-entry{grid-column:1/-1}.entry-row .remove-line{grid-column:2;justify-self:end}.status-line{grid-template-columns:1fr 1fr}.status-line b:first-child{grid-column:1/-1}.module-tabs{gap:6px}.module-btn{font-size:11px;padding:7px 9px}.answer-box{padding:12px}.study-step b{font-size:12px}}
 @media print{.no-print,header,.filters,.left-pane,.study-steps,.question-nav{display:none!important}.layout{display:block!important}.paper-card{box-shadow:none;break-inside:avoid}.question-card{break-inside:avoid}body{background:#fff}}
+
+.theme-toggle{background:#eaf2f1;color:#21484e;border-color:#cbdad7;cursor:pointer}.theme-toggle:focus-visible,.coach-tag:focus-visible{outline:3px solid #63aab2;outline-offset:2px}
+.coach-panel{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 12px;border:1px solid #dce5e1;border-radius:13px;background:#f5f8f6}.coach-heading{min-width:142px;display:flex;flex-direction:column;gap:3px;font-size:12px;color:#243a45}.coach-grid{display:grid;grid-template-columns:repeat(3,minmax(90px,1fr)) auto;gap:7px;align-items:stretch;flex:1}.coach-metric{display:flex;flex-direction:column;gap:2px;padding:7px 9px;border:1px solid #e2e9e6;border-radius:9px;background:#fff;font-size:10px;color:#596a70}.coach-metric b{font-size:14px;color:#203a45;font-variant-numeric:tabular-nums}.coach-metric small{font-size:9px;color:#718187}.coach-errors{display:flex;gap:5px;align-items:stretch}.coach-tag{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:50px;padding:5px 7px;border:1px solid #dce5e2;border-radius:9px;background:#fff;color:#334155;font-size:10px;cursor:pointer;transition:transform .15s ease,border-color .15s ease}.coach-tag b{font-size:14px}.coach-tag:hover:not(:disabled){border-color:#85b8ba;transform:translateY(-1px)}.coach-tag:disabled{opacity:.55;cursor:not-allowed}
+:root[data-theme="dark"]{color-scheme:dark;--paper:#0b1220;--ink:#e6edf5;--line:#2b3a4d;--muted:#9aabbd;--blue:#152b43;--green:#153129;--orange:#382b19;--rose:#38212a;--accent:#63bfd0;--accent-soft:#173641;--surface:#111d2d;--surface-raised:#17263a;--shadow:0 10px 30px rgba(0,0,0,.28)}
+html[data-theme="dark"] body{background:var(--paper);color:var(--ink);transition:background-color .18s ease,color .18s ease}
+html[data-theme="dark"] .paper-card,html[data-theme="dark"] .lesson-card,html[data-theme="dark"] .lesson-check,html[data-theme="dark"] .debug-check,html[data-theme="dark"] .nav-button,html[data-theme="dark"] .chip{background:var(--surface);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .header-sticky{background:rgba(11,18,32,.96)!important;border-color:var(--line)!important}
+html[data-theme="dark"] .header-sticky button,html[data-theme="dark"] .header-sticky label{background:var(--surface)!important;color:var(--ink)!important;border-color:var(--line)!important}html[data-theme="dark"] .header-sticky #resetBtn{color:#f2a7b4!important}
+html[data-theme="dark"] .lesson-card[open],html[data-theme="dark"] .question-card{border-color:#3a4a5f}
+html[data-theme="dark"] .lesson-panel{background:#142437;border-color:#315564;color:var(--ink)}
+html[data-theme="dark"] .lesson-panel.warn{background:#352817;border-color:#8e673d}
+html[data-theme="dark"] .lesson-check{background:var(--surface-raised)}
+html[data-theme="dark"] .lesson-check summary,html[data-theme="dark"] .q-code{color:#73d1dc}
+html[data-theme="dark"] .lesson-intro,html[data-theme="dark"] .empty-state{background:#132331!important;border-color:#294657!important;color:var(--ink)!important}
+html[data-theme="dark"] .lesson-goal,html[data-theme="dark"] .tiny,html[data-theme="dark"] .text-stone-500,html[data-theme="dark"] .text-stone-600,html[data-theme="dark"] .text-stone-700,html[data-theme="dark"] .text-slate-500,html[data-theme="dark"] .text-slate-600,html[data-theme="dark"] .text-slate-700{color:var(--muted)!important}
+html[data-theme="dark"] .lesson-body p,html[data-theme="dark"] .text-gray-700,html[data-theme="dark"] .text-stone-800{color:#d4deea!important}
+html[data-theme="dark"] .bg-white,html[data-theme="dark"] .bg-stone-50,html[data-theme="dark"] .bg-stone-100,html[data-theme="dark"] .bg-slate-100{background-color:var(--surface-raised)!important;color:var(--ink)!important}
+html[data-theme="dark"] .bg-stone-200{background-color:#26364a!important}
+html[data-theme="dark"] .text-rose-700,html[data-theme="dark"] .text-rose-800{color:#f2a7b4!important}
+html[data-theme="dark"] .border-stone-200,html[data-theme="dark"] .border-stone-100,html[data-theme="dark"] .border-b{border-color:var(--line)!important}
+html[data-theme="dark"] .gloss-row{border-color:var(--line)}
+html[data-theme="dark"] .gloss-row.active{background:#352817}
+html[data-theme="dark"] .answer-box.blue{background:var(--blue);border-color:#294a68;color:var(--ink)}
+html[data-theme="dark"] .answer-box.green{background:var(--green);border-color:#2c594a;color:var(--ink)}
+html[data-theme="dark"] .answer-box.orange{background:var(--orange);border-color:#70552f;color:var(--ink)}
+html[data-theme="dark"] .answer-box.impact{background:#1a2637;border-color:var(--line);color:var(--ink)}
+html[data-theme="dark"] .answer-table th{background:#1d2b3d;color:#e7eef6}
+html[data-theme="dark"] .answer-table td{border-color:#2b3a4d;color:#d9e3ed}
+html[data-theme="dark"] .answer-table tr.font-bold{background:#1c2a3c!important;color:#fff}
+html[data-theme="dark"] .question-nav{background:#111e2e;border-color:var(--line)}
+html[data-theme="dark"] .nav-counter{color:#b6d5dc}
+html[data-theme="dark"] .entry-row input,html[data-theme="dark"] .note-area,html[data-theme="dark"] .searchbox,html[data-theme="dark"] .calc-input,html[data-theme="dark"] .question-select{background:#0d1726;color:var(--ink);border-color:#3a4a5f}
+html[data-theme="dark"] input::placeholder,html[data-theme="dark"] textarea::placeholder{color:#8497aa}
+html[data-theme="dark"] .status-line{background:#172438!important;color:var(--ink)}
+html[data-theme="dark"] .debug-result{background:#13271f;border-color:#2c594a;color:var(--ink)}
+html[data-theme="dark"] .debug-result.has-errors{background:#332719;border-color:#70552f}
+html[data-theme="dark"] .debug-check{background:#172438;border-color:var(--line);color:var(--ink)}
+html[data-theme="dark"] .study-steps{background:var(--surface);border-color:var(--line)}
+html[data-theme="dark"] .study-step{border-color:var(--line)}
+html[data-theme="dark"] .study-step:hover{background:#17283b}
+html[data-theme="dark"] .step-no{background:#173641;color:#83d2dc}
+html[data-theme="dark"] .tab-active{background:#277381!important;border-color:#277381!important;color:#fff!important}
+html[data-theme="dark"] .chip.selected{background:#173641!important;border-color:#397181!important;color:#c7f0f0!important}
+html[data-theme="dark"] .diagnose-button{background:#173641!important;color:#d6f2f1!important}
+html[data-theme="dark"] .hint-btn{background:#483419!important;color:#ffdfa0!important}
+html[data-theme="dark"] .answer-button{background:#27465e!important;color:#f3f8fb!important}
+html[data-theme="dark"] .question-card [class*="bg-rose-50"]{background:#38212a!important;color:#f2a7b4!important}
+html[data-theme="dark"] .theme-toggle{background:#1b3042!important;color:#d8f5f3!important;border-color:#3c6370!important}
+html[data-theme="dark"] .coach-panel{background:#101c2b;border-color:var(--line)}
+html[data-theme="dark"] .coach-heading{color:#e6edf5}
+html[data-theme="dark"] .coach-heading .tiny{color:#aebdca!important}
+html[data-theme="dark"] .coach-metric{background:#172438;border-color:var(--line);color:#afbfce}
+html[data-theme="dark"] .coach-metric b{color:#eff6fb}
+html[data-theme="dark"] .coach-metric small{color:#aebdca}
+html[data-theme="dark"] .coach-tag{background:#1a2b3d;color:#d9e8f1;border-color:#34495f}
+html[data-theme="dark"] .coach-tag:hover:not(:disabled){background:#20374a;border-color:#5a9bab}
+html[data-theme="dark"] input[type="checkbox"]{accent-color:#63bfd0}
+@media(max-width:760px){.coach-panel{align-items:stretch;flex-direction:column}.coach-grid{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}.coach-errors{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.coach-tag{justify-content:space-between;padding:7px 8px}}
+@media(max-width:420px){.coach-errors{grid-template-columns:repeat(2,minmax(0,1fr))}.coach-heading{display:flex;justify-content:space-between;align-items:center}}
+@media print{html[data-theme="dark"] body{background:#fff!important;color:#111!important}html[data-theme="dark"] .paper-card,html[data-theme="dark"] .lesson-card{background:#fff!important;color:#111!important;border-color:#bbb!important}}
+
 </style>
 </head>
 <body>
@@ -21,9 +82,23 @@
   <div class="max-w-[1600px] mx-auto px-4 md:px-7 py-3">
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
       <div><div class="uppercase tracking-[.18em] text-[10px] text-stone-500">Kuram · TDHP · uygulama bankası</div><h1 class="serif text-xl md:text-2xl font-bold">Genel Muhasebe Çalışma Platformu</h1></div>
-      <div class="flex flex-wrap items-center gap-2 no-print"><button id="exportBtn" class="px-3 py-2 rounded-lg border bg-white text-sm">Çalışmalarımı İndir (JSON)</button><label class="px-3 py-2 rounded-lg border bg-white text-sm cursor-pointer">Yedeği Yükle<input id="importFile" type="file" accept="application/json" hidden></label><button id="resetBtn" class="px-3 py-2 rounded-lg text-sm text-rose-700">Yerel veriyi temizle</button></div>
+      <div class="flex flex-wrap items-center gap-2 no-print"><button id="themeToggle" type="button" class="theme-toggle px-3 py-2 rounded-lg border text-sm" aria-label="Açık temaya geç" aria-pressed="true"><span id="themeIcon" aria-hidden="true">☼</span> <span id="themeLabel">Aydınlık tema</span></button><button id="exportBtn" class="px-3 py-2 rounded-lg border bg-white text-sm">Çalışmalarımı İndir (JSON)</button><label class="px-3 py-2 rounded-lg border bg-white text-sm cursor-pointer">Yedeği Yükle<input id="importFile" type="file" accept="application/json" hidden></label><button id="resetBtn" class="px-3 py-2 rounded-lg text-sm text-rose-700">Yerel veriyi temizle</button></div>
     </div>
-    <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-2"><div class="w-full bg-stone-200 rounded-full h-2"><div id="progressBar" class="bg-slate-700 h-2 rounded-full transition-all" style="width:0%"></div></div><div id="progressText" class="text-xs whitespace-nowrap text-stone-600">0 / 64 soru · %0</div></div>
+    <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-2"><div class="w-full bg-stone-200 rounded-full h-2"><div id="progressBar" class="bg-slate-700 h-2 rounded-full transition-all" style="width:0%"></div></div><div id="progressText" class="text-xs whitespace-nowrap text-stone-600">0 / 67 soru · %0</div></div>
+    <section class="coach-panel no-print" id="studyCoach" aria-label="Çalışma koçu ve ilerleme özeti">
+      <div class="coach-heading"><strong>Çalışma koçu</strong><span class="tiny">Kendi işaretlerine dayalı · kodlara dokunup filtrele</span></div>
+      <div class="coach-grid">
+        <div class="coach-metric"><span>Tamamlanan</span><b id="coachSolved">0 / 67</b></div>
+        <div class="coach-metric"><span>Tamamlama oranı</span><b id="coachRate">%0</b></div>
+        <div class="coach-metric"><span>Öz puan ortalaması</span><b id="coachAverage">— / 7</b><small id="coachScored">Henüz puanlanan soru yok</small></div>
+        <div class="coach-errors" aria-label="İşaretli hata türleri">
+          <button type="button" class="coach-tag" data-coach-filter="K" aria-label="Kod hatası işaretli soruları filtrele" title="Kod hatalarını filtrele"><span>K · Kod</span><b id="coachK">0</b></button>
+          <button type="button" class="coach-tag" data-coach-filter="Y" aria-label="Yön hatası işaretli soruları filtrele" title="Yön hatalarını filtrele"><span>Y · Yön</span><b id="coachY">0</b></button>
+          <button type="button" class="coach-tag" data-coach-filter="T" aria-label="İşlem/tutar hatası işaretli soruları filtrele" title="İşlem/tutar hatalarını filtrele"><span>T · Tutar</span><b id="coachT">0</b></button>
+          <button type="button" class="coach-tag" data-coach-filter="M" aria-label="Mali tablo hatası işaretli soruları filtrele" title="Mali tablo hatalarını filtrele"><span>M · Tablo</span><b id="coachM">0</b></button>
+        </div>
+      </div>
+    </section>
     <div class="filters flex flex-wrap gap-2 mt-3 no-print"><button class="filter-btn chip selected" data-filter="all">Tüm Sorular</button><button class="filter-btn chip" data-filter="unsolved">Çözülmemişler</button><button class="filter-btn chip" data-filter="errors">Hata Yaptıklarım (K / Y / T / M)</button><input id="questionSearch" class="searchbox ml-auto text-sm" placeholder="Soru ara…" aria-label="Soru ara"></div>
   </div>
 </header>
@@ -264,7 +339,7 @@ function draftLine(id,l={},i=0){return `<div class="entry-row"><input class="acc
 function visibleQuestions(){
  const text=$('#questionSearch').value.trim().toLocaleLowerCase('tr');let qs=journals.filter(q=>q.module===activeModule);
  if(activeFilter==='unsolved')qs=qs.filter(q=>currentDraft(q).status!=='DONE');
- if(activeFilter==='errors')qs=qs.filter(q=>['K','Y','T','M'].includes(currentDraft(q).status));
+ if(activeFilter==='errors')qs=qs.filter(q=>['K','Y','T','M'].includes(currentDraft(q).status));else if(activeFilter.startsWith('error-'))qs=qs.filter(q=>currentDraft(q).status===activeFilter.slice(6));
  if(text)qs=qs.filter(q=>(q.title+' '+q.prompt+' '+q.id).toLocaleLowerCase('tr').includes(text));
  return qs;
 }
@@ -282,7 +357,7 @@ $('#questionNavigation').addEventListener('change',e=>{if(e.target.id==='questio
 function numberVal(v){return Number(String(v||'').replace(/\./g,'').replace(',','.'))||0}
 function fillDraftTotals(id){const el=$(`[data-question="${id}"]`);if(!el||!$('.draft-debit',el))return;let d=0,c=0;$$('.entry-row',el).forEach(r=>{d+=numberVal($('.amount-entry[data-field="debit"]',r).value);c+=numberVal($('.amount-entry[data-field="credit"]',r).value)});$('.draft-debit',el).textContent=fmt(d);$('.draft-credit',el).textContent=fmt(c);const b=$('.draft-balance',el);b.textContent=d===0&&c===0?'Satır ekleyin':d===c?'Eşit ✓':'Fark var: '+fmt(Math.abs(d-c));b.className='draft-balance '+(d===c&&d>0?'balance-ok':'balance-no')}
 function saveQuestionFromDOM(id){const el=$(`[data-question="${id}"]`);if(!el)return;const prev=currentDraft(journals.find(x=>x.id===id));const entries=$('.journal-editor',el)?$$('.entry-row',el).map(r=>({account:$('.account-entry',r).value,debit:$('.amount-entry[data-field="debit"]',r).value,credit:$('.amount-entry[data-field="credit"]',r).value})):(prev.entries||[]);state[id]={...prev,entries,note:$(`[data-note="${id}"]`,el)?.value||''};saveState()}
-function wireRubric(id){const el=$(`[data-question="${id}"]`);$$('.rubric',el).forEach(cb=>cb.addEventListener('change',()=>{const score=$$('.rubric:checked',el).reduce((s,x)=>s+Number(x.dataset.points),0);$('.rubric-score',el).textContent=score}))}
+function wireRubric(id){const el=$(`[data-question="${id}"]`);if(!el)return;const qi=journals.find(q=>q.id===id),boxes=$$('.rubric',el),saved=currentDraft(qi);boxes.forEach((cb,i)=>cb.checked=!!saved.rubric?.[i]);const refresh=()=>{$('.rubric-score',el).textContent=boxes.filter(cb=>cb.checked).reduce((sum,cb)=>sum+Number(cb.dataset.points),0)};refresh();boxes.forEach(cb=>cb.addEventListener('change',()=>{const d=currentDraft(qi);d.rubric=boxes.map(box=>box.checked);d.rubricTouched=true;state[id]=d;saveState();refresh()}))}
 $('#questionList').addEventListener('input',e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.matches('.amount-entry'))fillDraftTotals(id);if(e.target.matches('.journal-input,.note-area'))saveQuestionFromDOM(id)});
 $('#questionList').addEventListener('click',e=>{
  const add=e.target.closest('.add-line');if(add){const id=add.dataset.id,d=currentDraft(journals.find(q=>q.id===id));d.entries.push({account:'',debit:'',credit:''});state[id]=d;saveState();renderQuestions();$(`[data-question="${id}"] .account-entry:last-child`)?.focus();return}
@@ -293,15 +368,18 @@ $('#questionList').addEventListener('click',e=>{
  const debug=e.target.closest('.diagnose-btn');if(debug){const id=debug.dataset.id;saveQuestionFromDOM(id);const q= journals.find(x=>x.id===id),card=$(`[data-question="${id}"]`),panel=$(`[data-diagnosis="${id}"]`,card);panel.innerHTML=diagnoseQuestion(q,card);panel.hidden=false;return}
 });
 $$('.filter-btn').forEach(b=>b.addEventListener('click',()=>{activeFilter=b.dataset.filter;activeQuestionIndex=0;$$('.filter-btn').forEach(x=>x.classList.toggle('selected',x===b));renderQuestions()}));
+$$('.coach-tag').forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;activeFilter='error-'+b.dataset.coachFilter;activeQuestionIndex=0;$('#questionSearch').value='';$$('.filter-btn').forEach(x=>x.classList.toggle('selected',x.dataset.filter==='errors'));renderQuestions()}));
 $('#questionSearch').addEventListener('input',()=>{activeQuestionIndex=0;renderQuestions()});
 $('#clearQuestionFilters').addEventListener('click',()=>{$('#questionSearch').value='';activeFilter='all';activeQuestionIndex=0;$$('.filter-btn').forEach(x=>x.classList.toggle('selected',x.dataset.filter==='all'));renderQuestions()});
-function updateProgress(){const done=journals.filter(q=>currentDraft(q).status==='DONE').length,all=journals.length,p=all?Math.round(done*100/all):0;$('#progressBar').style.width=p+'%';$('#progressText').textContent=`${done} / ${all} soru · %${p}`}
+function updateProgress(){const done=journals.filter(q=>currentDraft(q).status==='DONE').length,all=journals.length,p=all?Math.round(done*100/all):0;$('#progressBar').style.width=p+'%';$('#progressText').textContent=`${done} / ${all} soru · %${p}`;$('#coachSolved').textContent=`${done} / ${all}`;$('#coachRate').textContent=`%${p}`;for(const code of ['K','Y','T','M']){const n=journals.filter(q=>currentDraft(q).status===code).length,button=$(`[data-coach-filter="${code}"]`);$(`#coach${code}`).textContent=n;button.disabled=n===0}const scored=journals.filter(q=>state[q.id]?.rubricTouched),weights=[2,1,2,1,1],points=scored.reduce((sum,q)=>sum+(state[q.id].rubric||[]).reduce((a,checked,i)=>a+(checked?(weights[i]||0):0),0),0),avg=scored.length?points/scored.length:null;$('#coachAverage').textContent=avg===null?'— / 7':`${avg.toLocaleString('tr-TR',{minimumFractionDigits:1,maximumFractionDigits:1})} / 7`;$('#coachScored').textContent=scored.length?`${scored.length} soru puanlandı`:'Henüz puanlanan soru yok'}
 $('#exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({app:'Genel Muhasebe Çalışma Platformu',version:1,exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='muhasebe-calisma-yedegi.json';a.click();URL.revokeObjectURL(a.href)});
 $('#importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());const imported=data.state||data;if(!imported||typeof imported!=='object'||Array.isArray(imported))throw Error('JSON biçimi tanınmadı');state={...state,...imported};saveState();renderQuestions();alert('Yedek yüklendi.')}catch(err){alert('Yedek yüklenemedi: '+err.message)}e.target.value=''});
 $('#resetBtn').addEventListener('click',()=>{if(confirm('Bu tarayıcıdaki tüm yerel çalışma verileri silinsin mi?')){state={};saveState();renderQuestions()}});
 // Veri bütünlüğü: her resmî yevmiye kartında borç/alacak eşitliğini çalışma anında doğrula.
 const imbalance=journals.filter(q=>q.kind!=='matching').map(q=>({id:q.id,dr:q.rows.filter(x=>x.side==='B').reduce((s,x)=>s+x.amount,0),cr:q.rows.filter(x=>x.side==='A').reduce((s,x)=>s+x.amount,0)})).filter(x=>x.dr!==x.cr);
 if(imbalance.length){console.error('Dengesiz kayıtlar:',imbalance);document.body.insertAdjacentHTML('afterbegin',`<div style="position:sticky;top:0;z-index:99;background:#fee2e2;color:#991b1b;padding:8px;text-align:center">Veri kontrolü: ${imbalance.map(x=>x.id).join(', ')} kayıtlarında Borç/Alacak farkı var.</div>`)}
+function setTheme(theme,persist=true){const value=theme==='light'?'light':'dark';document.documentElement.dataset.theme=value;if(persist){try{localStorage.setItem('genelMuhasebeTheme.v1',value)}catch{}}const dark=value==='dark';$('#themeIcon').textContent=dark?'☼':'◐';$('#themeLabel').textContent=dark?'Aydınlık tema':'Koyu tema';$('#themeToggle').setAttribute('aria-label',dark?'Açık temaya geç':'Koyu temaya geç');$('#themeToggle').setAttribute('aria-pressed',String(dark))}
+setTheme(document.documentElement.dataset.theme||'dark',false);$('#themeToggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
 renderLessons();renderModules();renderQuestions();updateProgress();
 </script>
 </body>
